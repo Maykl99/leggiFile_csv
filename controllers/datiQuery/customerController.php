@@ -1,1 +1,0 @@
-// qui passo i valori pescati dal db che dovranno poi essere visualizzati dalla view

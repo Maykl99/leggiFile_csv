@@ -1,6 +1,6 @@
 <?php
 
-// connessione al db locale con PDO
+// connessione al db locale con libreria PDO
 class Connection extends PDO
 {
     static private $dsn = 'mysql:dbname=quality_lab;host=localhost:8891';

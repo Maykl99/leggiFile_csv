@@ -1,0 +1,5 @@
+{
+    "require": {
+        "luchaninov/csv-file-loader": "1.*"
+    }
+}
