@@ -1,4 +1,5 @@
 <?php 
+// estraiValori dal file csv 
 class EstraiValori
 {
     private const csvfile = '../assets/csv/CLIENTE_TIPOLOGIA_ID_DATA.csv';
@@ -9,6 +10,7 @@ class EstraiValori
             return false;
         elseif(self::csvfile):
             $file_handle = fopen(self::csvfile, 'r');
+            fgetcsv($file_handle);
             while (($data = fgetcsv($file_handle, 1000, ",")) !== FALSE) { // Check opening the file is OK!
                 print_r($data); // Array
             }
