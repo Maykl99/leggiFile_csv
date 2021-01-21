@@ -1,0 +1,4 @@
+Ambiente locale MAMP, phpMyAdmin versione MYSQL 5.7.24
+
+
+CREATE DATABASE Quality_Lab;

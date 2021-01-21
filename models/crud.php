@@ -1,0 +1,1 @@
+// effettuare la query di inserimento dati qui, e la query di estrazione dati 
