@@ -1,6 +1,3 @@
-<?php
-    require_once('controllers/CustomerController.php');
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,29 +10,10 @@
   </head>
   <body>
     <h1>Tabella Utenti</h1>
-
-
-    <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cognome</th>
-            <th scope="col">Email</th>
-            <th scope="col">Tipologia</th>
-            <th scope="col">Note</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                $utente = new CustomerController;
-                $utente->mostraUtenti();
-            ?>
-        </tbody>
-    </table>
-
-
-
+    
+    <?php
+        // includere il template Tabella utenti!
+    ?>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->

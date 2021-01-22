@@ -2,8 +2,8 @@
 require_once 'Connection.php';
 require_once 'CsvImporter.php';
 
-// query di inserimento, query di lettura dal db con i dati presi dal file csvfile
-class QueryDb
+// Query di inserimento, lettura dal db con i valori estratti dal file csv
+class QueryDB
 {
     private $table = 'clienti';
 
@@ -18,6 +18,7 @@ class QueryDb
                 $stmt = Connection::connect()->prepare(
                     "INSERT INTO $this->table(nome,cognome,email,note) VALUES(:n,:c,:e,:nt)"
                 );
+                // togliere lo spazio a cognome, controllo tipo di valore passato
                 $stmt->bindParam(':n',$r['nome'], PDO::PARAM_STR);
                 $stmt->bindParam(':c',$r['cognome '], PDO::PARAM_STR);
                 $stmt->bindParam(':e',$r['email'], PDO::PARAM_STR);

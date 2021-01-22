@@ -1,17 +1,14 @@
 <?php
-
-// connessione al db locale con libreria PDO
+// connessione al db locale 
 class Connection extends PDO
 {
-    static private $dsn = 'mysql:dbname=quality_lab;host=localhost:8891';
-    static private $user = 'root';
-    static private $password = '1234';
-
+    static private $config = array();
     final static public function connect() : object
     {
         try
         {
-            return new PDO(self::$dsn, self::$user, self::$password);
+            self::$config = require_once '../config/database.php';
+            return new PDO(self::$config['dsn'], self::$config['user'], self::$config['password']);
         }
         catch (PDOException $e)
         {
