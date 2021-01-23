@@ -7,18 +7,22 @@ class QueryDB
 {
     private $table = 'clienti';
 
-    public function insertQuery() : void
+    public function insertQuery() #: void
     {
         $csvValues = new CsvImporter;
         $row = $csvValues->ReaderCSV();
+        
+        $stmt = Connection::connect()->prepare(
+            "INSERT INTO $this->table(nome,cognome,email,note) VALUES(:n,:c,:e,:nt)"
+        );
 
         foreach ($row as $r):
             try 
-            {
-                $stmt = Connection::connect()->prepare(
-                    "INSERT INTO $this->table(nome,cognome,email,note) VALUES(:n,:c,:e,:nt)"
-                );
-                
+            {                
+                if(empty($r['email'])):
+                    $r['email'] = $r['id'] . $r['nome'] . 'email@gmail.com';
+                    print_r($r['email']);
+                endif;
                 $stmt->bindParam(':n',$r['nome'], PDO::PARAM_STR);
                 $stmt->bindParam(':c',$r['cognome'], PDO::PARAM_STR);
                 $stmt->bindParam(':e',$r['email'], PDO::PARAM_STR);
@@ -51,5 +55,6 @@ class QueryDB
 
 
 
-
+$db = new QueryDB;
+$db->insertQuery();
 

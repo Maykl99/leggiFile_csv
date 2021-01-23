@@ -11,11 +11,21 @@ class CsvImporter extends CsvFileLoader
 
     // mettere il controllo sull'unicità del file!
 
-    public function ReaderCSV() : array
+    public function ReaderCSV()
     {
-        $this->loader = new CsvFileLoader(self::csvfile);
-        $this->loader->setDelimiter(';');
-        return $this->loader->getItemsArray();
+        try{
+            $this->loader = new CsvFileLoader(self::csvfile);
+            $this->loader->setDelimiter(';');
+            return $this->loader->getItemsArray();
+        }
+        catch(Exception $e)
+        {   
+            echo $e;
+        }
+
     }
 }
+
+$csv = new CsvImporter;
+$csv->ReaderCSV();
 

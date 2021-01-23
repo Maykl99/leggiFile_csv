@@ -4,12 +4,22 @@ require_once '../models/QueryDB.php';
 // elaborazione dei dati da passare alla views
 class CustomerController 
 {
-    public function tableUtenti()
+
+    // creare il controller per leggere il csv!!
+
+    public function insertQueryController() : void
+    {
+        $insertQuery = new QueryDB;
+        $insertQuery->insertQuery();
+    }
+
+
+    public function tableUtenti() : void
     {
         include '../views/index.php'; #'../views/template/tableUtenti.php';
     }
 
-    public function mostraUtenti()
+    public function mostraUtenti() : void
     {
         $responseDB = new QueryDB;
         foreach ($responseDB->selectQuery() as $item)

@@ -1,10 +1,11 @@
 <?php
 // connessione al db locale 
-class Connection extends PDO
+class Connection #extends PDO
 {
     static private $config = array();
-    final static public function connect() : object
+    final static public function connect() #: object
     {
+        
         try
         {
             self::$config = require_once '../config/database.php';
@@ -16,3 +17,8 @@ class Connection extends PDO
         }
     }
 }
+
+
+#test
+/* $connect1 = new Connection();
+$connect1->connect(); */
