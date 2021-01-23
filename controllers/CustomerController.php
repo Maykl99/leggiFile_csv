@@ -4,10 +4,9 @@ require_once '../models/QueryDB.php';
 // elaborazione dei dati da passare alla views
 class CustomerController 
 {
-
     public function tableUtenti()
     {
-        include '../views/template/tableUtenti.php';
+        include '../views/index.php'; #'../views/template/tableUtenti.php';
     }
 
     public function mostraUtenti()

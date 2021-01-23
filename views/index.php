@@ -9,11 +9,36 @@
     <title>Mostra utenti</title>
   </head>
   <body>
-    <h1>Tabella Utenti</h1>
-    
-    <?php
-        // includere il template Tabella utenti!
-    ?>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+
+          <h1>Tabella Utenti</h1>
+          <!-- tabella utenti -->
+          <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tipologia</th>
+                <th scope="col">Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                  $CustomerController = new CustomerController;
+                  $CustomerController->mostraUtenti();
+                ?>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
