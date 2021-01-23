@@ -21,7 +21,6 @@ class QueryDB
             {                
                 if(empty($r['email'])):
                     $r['email'] = $r['id'] . $r['nome'] . 'email@gmail.com';
-                    print_r($r['email']);
                 endif;
                 $stmt->bindParam(':n',$r['nome'], PDO::PARAM_STR);
                 $stmt->bindParam(':c',$r['cognome'], PDO::PARAM_STR);
@@ -36,7 +35,7 @@ class QueryDB
         endforeach;
     }
 
-    public function selectQuery() : array 
+    public function selectQuery() #: array 
     {
         try
         {
@@ -45,6 +44,7 @@ class QueryDB
             );
             $stmt->execute();
             return $stmt->fetchAll();
+
         }
         catch (PDOException $e)
         {
@@ -56,5 +56,6 @@ class QueryDB
 
 
 $db = new QueryDB;
-$db->insertQuery();
+$db->selectQuery();
+#$db->insertQuery();
 

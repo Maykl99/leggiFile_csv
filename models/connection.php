@@ -2,14 +2,22 @@
 // connessione al db locale 
 class Connection #extends PDO
 {
-    static private $config = array();
-    final static public function connect() #: object
+/*     static private $config = null;
+    static private $dsn = null;
+    static private $user = null;
+    static private $password = null; */
+
+    static private $dsn = 'mysql:dbname=quality_lab;host=localhost:8891';
+    static private $user = 'root';
+    static private $password = '1234';
+    final static public function connect() : object
     {
-        
         try
         {
-            self::$config = require_once '../config/database.php';
-            return new PDO(self::$config['dsn'], self::$config['user'], self::$config['password']);
+            /* $config = self::$config = require_once '../config/database.php';
+            self::$dsn = $config['dsn']; self::$user = $config['user']; self::$password = $config['password']; */
+
+            return new PDO(self::$dsn, self::$user, self::$password);
         }
         catch (PDOException $e)
         {
@@ -18,7 +26,5 @@ class Connection #extends PDO
     }
 }
 
-
-#test
-/* $connect1 = new Connection();
-$connect1->connect(); */
+/* $c = new Connection;
+$c->connect(); */

@@ -9,8 +9,7 @@ class CsvImporter extends CsvFileLoader
     private const csvfile = '../assets/csv/CLIENTE_TIPOLOGIA_ID_DATA.csv';
     private $loader = null;
 
-    // mettere il controllo sull'unicità del file!
-
+    // riuscire a leggere tutte i file formato csv, ma prendere i valori di un singolo file!
     public function ReaderCSV()
     {
         try{
@@ -22,10 +21,6 @@ class CsvImporter extends CsvFileLoader
         {   
             echo $e;
         }
-
     }
 }
-
-$csv = new CsvImporter;
-$csv->ReaderCSV();
 

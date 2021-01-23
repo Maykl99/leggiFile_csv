@@ -4,19 +4,15 @@ require_once '../models/QueryDB.php';
 // elaborazione dei dati da passare alla views
 class CustomerController 
 {
-
-    // creare il controller per leggere il csv!!
-
     public function insertQueryController() : void
     {
         $insertQuery = new QueryDB;
         $insertQuery->insertQuery();
     }
 
-
     public function tableUtenti() : void
     {
-        include '../views/index.php'; #'../views/template/tableUtenti.php';
+        include '../views/index.php'; 
     }
 
     public function mostraUtenti() : void
@@ -36,6 +32,6 @@ class CustomerController
     }
 } 
 
-// creare delle rotte!
-$CustomerController = new CustomerController;
-$CustomerController->tableUtenti();
+$customer = new CustomerController;
+$customer->insertQueryController();
+$customer->tableUtenti();
