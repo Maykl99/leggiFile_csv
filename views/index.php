@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-10">
 
-          <h1>Tabella Utenti</h1>
+          <h1 class="mt-5">Tabella Utenti</h1>
           <!-- tabella utenti -->
           <table class="table table-dark table-striped">
             <thead>
