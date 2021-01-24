@@ -1,0 +1,8 @@
+DirectoryIndex controllers/CustomerController.php
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^ controllers/CustomerController.php [L]
+
+RewriteRule !^(public/|controllers/CustomerController\.php) [NC,F]
