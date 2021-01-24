@@ -9,13 +9,14 @@ class CsvImporter extends CsvFileLoader
     private const csvfile = '../assets/csv/CLIENTE_TIPOLOGIA_ID_DATA.csv';
     private $loader = null;
 
-    // riuscire a leggere tutte i file formato csv, ma prendere i valori di un singolo file!
     public function ReaderCSV()
     {
         try{
-            $this->loader = new CsvFileLoader(self::csvfile);
-            $this->loader->setDelimiter(';');
-            return $this->loader->getItemsArray();
+            if(self::csvfile === '../assets/csv/CLIENTE_TIPOLOGIA_ID_DATA.csv'): 
+                $this->loader = new CsvFileLoader(self::csvfile);
+                $this->loader->setDelimiter(';');
+                return $this->loader->getItemsArray();
+            endif;
         }
         catch(Exception $e)
         {   
@@ -23,4 +24,8 @@ class CsvImporter extends CsvFileLoader
         }
     }
 }
+
+/* test di prova
+$csv = new CsvImporter();
+$csv->ReaderCSV(); */
 

@@ -7,7 +7,7 @@ class QueryDB
 {
     private $table = 'clienti';
 
-    public function insertQuery() #: void
+    public function insertQuery() : void
     {
         $csvValues = new CsvImporter;
         $row = $csvValues->ReaderCSV();
@@ -35,7 +35,7 @@ class QueryDB
         endforeach;
     }
 
-    public function selectQuery() #: array 
+    public function selectQuery() : array 
     {
         try
         {
@@ -55,7 +55,8 @@ class QueryDB
 
 
 
+/* test di prova 
 $db = new QueryDB;
 $db->selectQuery();
-#$db->insertQuery();
+#$db->insertQuery(); */
 
