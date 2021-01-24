@@ -55,8 +55,3 @@ class QueryDB
 
 
 
-/* test di prova 
-$db = new QueryDB;
-$db->selectQuery();
-#$db->insertQuery(); */
-

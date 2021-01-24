@@ -19,7 +19,3 @@ class Connection #extends PDO
         }
     }
 }
-
-/* test di prova 
-$c = new Connection;
-$c->connect(); */

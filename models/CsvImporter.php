@@ -25,7 +25,4 @@ class CsvImporter extends CsvFileLoader
     }
 }
 
-/* test di prova
-$csv = new CsvImporter();
-$csv->ReaderCSV(); */
 
