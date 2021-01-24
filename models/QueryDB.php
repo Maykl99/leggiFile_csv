@@ -2,21 +2,22 @@
 require_once 'Connection.php';
 require_once 'CsvImporter.php';
 
-// Query di inserimento, lettura dal db con i valori estratti dal file csv
+// Classe di query db
 class QueryDB
 {
     private $table = 'clienti';
 
+    // Query di inserimento con i valori estratti dal file csv
     public function insertQuery() : void
     {
         $csvValues = new CsvImporter;
         $row = $csvValues->ReaderCSV();
         
+        // eseguo una query di verifica per vedere se il db è già stato popolato!
         $stmt = Connection::connect()->prepare("SELECT * FROM $this->table");
         $stmt->execute();
         $db = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // mettere un controllo se > 0!
         if($db > 0): 
             return;
         else: 
@@ -43,6 +44,7 @@ class QueryDB
         endif;
     }
 
+    // Lettura della table
     public function selectQuery() : array 
     {
         try

@@ -3,7 +3,7 @@
 use Luchaninov\CsvFileLoader\CsvFileLoader;
 require_once '../vendor/autoload.php';
 
-// lettura file formato csv
+// Classe di lettura file formato csv
 class CsvImporter extends CsvFileLoader
 {
     private const csvfile = '../assets/csv/CLIENTE_TIPOLOGIA_ID_DATA.csv';

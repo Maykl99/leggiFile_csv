@@ -1,7 +1,7 @@
 <?php
 require_once '../models/QueryDB.php';
 
-// elaborazione dei dati da passare alla views
+// Elaborazione dei dati da passare alla views/index
 class CustomerController 
 {
     public function insertQueryController() : void
